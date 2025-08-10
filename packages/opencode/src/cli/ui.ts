@@ -3,12 +3,6 @@ import { EOL } from "os"
 import { NamedError } from "../util/error"
 
 export namespace UI {
-  const LOGO = [
-    [`█▀▀█ █▀▀█ █▀▀ █▀▀▄ `, `█▀▀ █▀▀█ █▀▀▄ █▀▀`],
-    [`█░░█ █░░█ █▀▀ █░░█ `, `█░░ █░░█ █░░█ █▀▀`],
-    [`▀▀▀▀ █▀▀▀ ▀▀▀ ▀  ▀ `, `▀▀▀ ▀▀▀▀ ▀▀▀  ▀▀▀`],
-  ]
-
   export const CancelledError = NamedError.create("UICancelledError", z.void())
 
   export const Style = {
@@ -28,6 +22,23 @@ export namespace UI {
     TEXT_INFO_BOLD: "\x1b[94m\x1b[1m",
   }
 
+  export const LOGO = [
+    [
+      `█▀▀█ █▀▀█ █▀▀ █▀▀▄     █▀▀█ █▀▀█ █▀▀ █▀▀█ █▀▀█ ▀▀█▀▀ █▀▀█`,
+      `█▀▀ █▀▀█ █▀▀▄ █▀▀  ▄ █▀▀█ █▀▀█ █▀▀ █▀▀█ █▀▀█ ▀▀█▀▀ █▀▀█`,
+    ],
+    [
+      `█░░█ █░░█ █▀▀ █░░█     █░░█ █▄▄▀ █░░ █░░█ █▄▄▀ ░░█░░ █▄▄█`,
+      `█░░ █░░█ █░░█ █▀▀   █░░█ █▄▄▀ █░░ █░░█ █▄▄▀ ░░█░░ █▄▄█`,
+    ],
+    [
+      `▀▀▀▀ █▀▀▀ ▀▀▀ ▀  ▀     ▀▀▀▀ ▀ ▀▀ ▀▀▀ ▀░░▀ ▀ ▀▀ ░░▀░░ ▀░░▀`,
+      `▀▀▀ ▀▀▀▀ ▀▀▀  ▀▀▀    ▀▀▀▀ ▀ ▀▀ ▀▀▀░░▀▀ ▀░░▀ ▀ ▀▀ ░░▀░░ ▀░`,
+    ],
+  ]
+
+  let blank = false
+
   export function println(...message: string[]) {
     print(...message)
     Bun.stderr.write(EOL)
@@ -38,7 +49,6 @@ export namespace UI {
     Bun.stderr.write(message.join(" "))
   }
 
-  let blank = false
   export function empty() {
     if (blank) return
     println("" + Style.TEXT_NORMAL)
