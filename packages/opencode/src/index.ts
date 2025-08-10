@@ -18,6 +18,7 @@ import { DebugCommand } from "./cli/cmd/debug"
 import { StatsCommand } from "./cli/cmd/stats"
 import { McpCommand } from "./cli/cmd/mcp"
 import { GithubCommand } from "./cli/cmd/github"
+import { TestCommand } from "./cli/cmd/test"
 
 const cancel = new AbortController()
 
@@ -81,6 +82,7 @@ const cli = yargs(hideBin(process.argv))
   .command(ModelsCommand)
   .command(StatsCommand)
   .command(GithubCommand)
+  .command(TestCommand)
   .fail((msg) => {
     if (msg.startsWith("Unknown argument") || msg.startsWith("Not enough non-option arguments")) {
       cli.showHelp("log")
@@ -123,7 +125,4 @@ try {
   const formatted = FormatError(e)
   if (formatted) UI.error(formatted)
   if (formatted === undefined) UI.error("Unexpected error, check log file at " + Log.file() + " for more details")
-  process.exitCode = 1
 }
-
-cancel.abort()
