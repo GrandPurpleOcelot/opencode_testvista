@@ -20,11 +20,6 @@ import { McpCommand } from "./cli/cmd/mcp"
 import { GithubCommand } from "./cli/cmd/github"
 import { TestCommand } from "./cli/cmd/test"
 
-const cancel = new AbortController()
-
-try {
-} catch (e) {}
-
 process.on("unhandledRejection", (e) => {
   Log.Default.error("rejection", {
     e: e instanceof Error ? e.message : e,
