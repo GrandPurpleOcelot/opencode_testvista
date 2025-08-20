@@ -32,7 +32,8 @@
   },
   "devDependencies": {
     "prettier": "3.5.3",
-    "sst": "3.17.8"
+    "sst": "3.17.8",
+    "web-tree-sitter": "0.25.8"
   },
   "repository": {
     "type": "git",
