@@ -206,6 +206,7 @@
   ],
   "catalog": {
     "@hono/zod-validator": "0.4.2",
+    "@opencode-ai/sdk": "workspace:packages/sdk/js",
     "@tsconfig/node22": "22.0.2",
     "@types/node": "22.13.9",
     "ai": "5.0.8",

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import "zod-openapi/extend"
 import yargs from "yargs"
 import { hideBin } from "yargs/helpers"
@@ -33,7 +34,7 @@ process.on("uncaughtException", (e) => {
 })
 
 const cli = yargs(hideBin(process.argv))
-  .scriptName("opencode")
+  .scriptName("opentestvista")
   .help("help", "show help")
   .version("version", "show version number", Installation.VERSION)
   .alias("version", "v")

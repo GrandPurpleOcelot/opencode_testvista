@@ -1,7 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "opencode",
-  "private": true,
+  "name": "opentestvista",
+  "version": "0.0.0",
+  "bin": {
+    "opentestvista": "bin/opentestvista"
+  },
+  "private": false,
   "type": "module",
   "packageManager": "bun@1.2.19",
   "scripts": {
@@ -24,7 +28,8 @@
       "hono": "4.7.10",
       "typescript": "5.8.2",
       "zod": "3.25.76",
-      "remeda": "2.26.0"
+      "remeda": "2.26.0",
+      "@opencode-ai/sdk": "workspace:packages/sdk/js"
     }
   },
   "dependencies": {
@@ -37,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sst/opencode"
+    "url": "git+https://github.com/GrandPurpleOcelot/opencode_testvista.git"
   },
   "license": "MIT",
   "prettier": {
